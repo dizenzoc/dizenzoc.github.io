@@ -1,0 +1,424 @@
+        :root {
+            --bg-main: #0d0d12;
+            --bg-secondary: #15151e;
+            --surface: #1e1e2d;
+            --purple-primary: #8b5cf6;
+            --purple-gradient: linear-gradient(135deg, #a855f7 0%, #6366f1 100%);
+            --text-light: #f8fafc;
+            --text-muted: #94a3b8;
+            --border-color: rgba(255, 255, 255, 0.08);
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--bg-main);
+            color: var(--text-light);
+            position: relative;
+        }
+
+        section {
+            padding-top: 120px;
+            padding-bottom: 80px;
+        }
+
+        /* Apple Style Floating Navbar - Ottimizzata */
+        .nav-wrapper {
+            position: fixed;
+            top: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            z-index: 1030;
+            width: max-content;
+            /* Aderisce al contenuto */
+            max-width: 90%;
+            /* Protezione per schermi molto piccoli */
+        }
+
+        .apple-navbar {
+            background: rgba(30, 30, 45, 0.6);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 50px;
+            padding: 0.5rem 1rem;
+            /* Ridotto il padding laterale */
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+            width: 100%;
+        }
+
+        .apple-navbar .navbar-brand {
+            font-weight: 700;
+            color: var(--text-light);
+        }
+
+        .apple-navbar .nav-link {
+            color: var(--text-muted) !important;
+            border-radius: 50px;
+            padding: 6px 16px !important;
+            /* Ridotto lo spazio interno ai lati dei link */
+            font-weight: 500;
+            font-size: 14px;
+            transition: all 0.3s ease;
+            margin: 0 2px;
+            /* Ridotto il margine tra i link */
+        }
+
+        .apple-navbar .nav-link:hover {
+            color: var(--text-light) !important;
+        }
+
+        /* Scrollspy Active State */
+        .apple-navbar .nav-link.active {
+            background: rgba(139, 92, 246, 0.2);
+            color: #d8b4fe !important;
+        }
+
+        .navbar-toggler {
+            border: none;
+            color: white;
+            padding: 4px 8px;
+        }
+
+        .navbar-toggler:focus {
+            box-shadow: none;
+        }
+
+        /* Typography & Utilities */
+        .text-purple {
+            color: var(--purple-primary);
+        }
+
+        .bg-purple {
+            background-color: var(--purple-primary);
+        }
+
+        .text-muted {
+            color: var(--text-muted) !important;
+        }
+
+        .section-title {
+            font-weight: 700;
+            margin-bottom: 1rem;
+            background: var(--purple-gradient);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            display: inline-block;
+        }
+
+        /* Buttons */
+        .btn-gradient {
+            background: var(--purple-gradient);
+            color: white;
+            border: none;
+            border-radius: 8px;
+            font-weight: 500;
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+
+        .btn-gradient:hover {
+            color: white;
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(139, 92, 246, 0.4);
+        }
+
+        .btn-outline-glass {
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            color: var(--text-light);
+            border-radius: 8px;
+            backdrop-filter: blur(5px);
+            transition: all 0.3s;
+        }
+
+        .btn-outline-glass:hover {
+            background: rgba(255, 255, 255, 0.1);
+            color: white;
+        }
+
+        /* Hero Section & Animazione Foto */
+        #chi-sono {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+        }
+
+        @keyframes floating {
+            0% {
+                transform: translateY(0px);
+            }
+
+            50% {
+                transform: translateY(-15px);
+            }
+
+            100% {
+                transform: translateY(0px);
+            }
+        }
+
+        .hero-img {
+            width: 100%;
+            max-width: 420px;
+            border-radius: 16px;
+            box-shadow: 0 20px 40px rgba(139, 92, 246, 0.15);
+            border: 1px solid var(--border-color);
+            animation: floating 4s ease-in-out infinite;
+        }
+
+        /* Social Icons */
+        .social-link {
+            font-size: 1.5rem;
+            color: var(--text-muted);
+            margin-right: 20px;
+            transition: all 0.3s;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 45px;
+            height: 45px;
+            border-radius: 50%;
+            background: var(--surface);
+            border: 1px solid var(--border-color);
+        }
+
+        .social-link:hover {
+            color: white;
+            background: var(--purple-gradient);
+            border-color: transparent;
+            transform: translateY(-3px);
+        }
+
+        /* Timeline */
+        .timeline {
+            border-left: 2px solid var(--surface);
+            padding-left: 25px;
+            list-style: none;
+            margin-left: 10px;
+        }
+
+        .timeline li {
+            margin-bottom: 30px;
+            position: relative;
+        }
+
+        .timeline li::before {
+            content: '';
+            position: absolute;
+            left: -32px;
+            top: 5px;
+            width: 12px;
+            height: 12px;
+            background-color: var(--purple-primary);
+            border-radius: 50%;
+            box-shadow: 0 0 10px var(--purple-primary);
+        }
+
+        /* Progress Bars e Skills */
+        .skill-icon {
+            width: 35px;
+            font-size: 1.5rem;
+            color: var(--text-light);
+        }
+
+        .progress {
+            height: 8px;
+            border-radius: 10px;
+            background-color: var(--surface);
+            overflow: visible;
+        }
+
+        .progress-bar {
+            background: var(--purple-gradient);
+            border-radius: 10px;
+            position: relative;
+        }
+
+        /* Glow effect on progress bar */
+        .progress-bar::after {
+            content: '';
+            position: absolute;
+            right: 0;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 12px;
+            height: 12px;
+            background-color: white;
+            border-radius: 50%;
+            box-shadow: 0 0 10px var(--purple-primary);
+        }
+
+        /* Project Cards */
+        .project-card {
+            background-color: var(--bg-secondary);
+            border: 1px solid var(--border-color);
+            border-radius: 16px;
+            overflow: hidden;
+            transition: all 0.4s ease;
+            height: 100%;
+        }
+
+        .project-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.4);
+            border-color: rgba(139, 92, 246, 0.3);
+        }
+
+        .project-card img {
+            width: 100%;
+            height: 200px;
+            object-fit: contain;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .tech-badge {
+            background: rgba(139, 92, 246, 0.1);
+            color: #d8b4fe;
+            border: 1px solid rgba(139, 92, 246, 0.2);
+            padding: 5px 12px;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: 500;
+            margin-right: 5px;
+            margin-bottom: 5px;
+            display: inline-block;
+        }
+
+        /* Form Contatti */
+        .contact-card {
+            background-color: var(--surface);
+            border: 1px solid var(--border-color);
+            border-radius: 16px;
+        }
+
+        .form-control {
+            background-color: var(--bg-main);
+            border: 1px solid var(--border-color);
+            color: var(--text-light);
+            border-radius: 8px;
+            padding: 12px 15px;
+        }
+
+        .form-control:focus {
+            background-color: var(--bg-main);
+            color: var(--text-light);
+            border-color: var(--purple-primary);
+            box-shadow: 0 0 0 0.25rem rgba(139, 92, 246, 0.2);
+        }
+
+        .form-control::placeholder {
+            color: var(--text-muted);
+        }
+
+        /* Intro Screen Styles */
+        #intro-screen {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: var(--bg-main);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 9999;
+            transition: opacity 0.8s ease;
+        }
+
+        .intro-name {
+            font-size: 3rem;
+            font-weight: 700;
+            color: var(--text-light);
+            animation: flash-purple 1.5s ease-in-out forwards;
+        }
+
+        @keyframes flash-purple {
+            0% {
+                opacity: 0;
+                transform: scale(0.9);
+            }
+
+            50% {
+                opacity: 1;
+                text-shadow: 0 0 20px var(--purple-primary);
+                color: var(--purple-primary);
+            }
+
+            100% {
+                opacity: 1;
+                transform: scale(1);
+            }
+        }
+
+        .fade-out {
+            opacity: 0 !important;
+            pointer-events: none;
+        }
+
+        /* Media query per dispositivi mobili */
+        @media (max-width: 767.98px) {
+            section {
+                padding-top: 40px;
+                /* Reduced gap since navbar is at bottom */
+                padding-bottom: 120px;
+                /* Added space so content isn't hidden by bottom navbar */
+            }
+
+            .nav-wrapper {
+                top: auto;
+                bottom: 10px;
+                /* Posizionata in basso */
+                width: 90%;
+                /* Più larga su mobile */
+                left: 50%;
+                transform: translateX(-50%);
+                z-index: 1050;
+                /* Impedisce il ritardo nel rendering durante lo scroll */
+                will-change: transform;
+                transition: none;
+            }
+
+            .apple-navbar {
+                padding: 0.5rem 0.5rem;
+            }
+
+            .navbar-nav {
+                flex-direction: row !important;
+                justify-content: space-between !important;
+                width: 100%;
+                padding: 0;
+                margin: 0;
+            }
+
+            .nav-item {
+                flex: 1;
+                display: flex;
+                justify-content: center;
+            }
+
+            .nav-link {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                font-size: 0.60rem !important;
+                /* Scritta piccolissima per evitare che vada a capo */
+                padding: 4px 8px !important;
+                white-space: nowrap;
+                letter-spacing: 0.5px;
+            }
+
+            /* Aggiungiamo icone sopra le scritte */
+            .nav-link i {
+                font-size: 1.1rem;
+                margin-bottom: 2px;
+            }
+
+            /* Intro centrata su mobile */
+            #intro-screen {
+                padding: 0 24px;
+                text-align: center;
+            }
+
+            .intro-name {
+                font-size: 1.8rem;
+            }
+        }

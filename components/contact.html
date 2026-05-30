@@ -1,0 +1,75 @@
+<!-- Sezione: Contatti -->
+<section id="contatti" style="background-color: var(--bg-secondary);">
+    <div class="container">
+        <div class="text-center mb-5">
+            <h2 class="display-5 fw-bold text-light">Mettiamoci in Contatto</h2>
+            <p class="text-muted">Hai un'idea? Costruiamola insieme.</p>
+        </div>
+
+        <div class="row g-5">
+            <!-- Info Contatti -->
+            <div class="col-lg-5">
+                <div class="contact-card p-4 h-100">
+                    <h4 class="fw-bold mb-4">Informazioni</h4>
+                    <div class="d-flex align-items-center mb-4">
+                        <div class="bg-purple text-white rounded d-flex align-items-center justify-content-center me-3"
+                            style="width: 40px; height: 40px;">
+                            <i class="fa-solid fa-envelope"></i>
+                        </div>
+                        <div>
+                            <p class="mb-0 text-muted small">Scrivimi un'email</p>
+                            <a href="mailto:dizenzocf@gmail.com"
+                                class="text-decoration-none text-light fw-medium">dizenzocf@gmail.com</a>
+                        </div>
+                    </div>
+                    <div class="d-flex align-items-center mb-5">
+                        <div class="bg-purple text-white rounded d-flex align-items-center justify-content-center me-3"
+                            style="width: 40px; height: 40px;">
+                            <i class="fa-solid fa-location-dot"></i>
+                        </div>
+                        <div>
+                            <p class="mb-0 text-muted small">Location</p>
+                            <span class="text-light fw-medium">Avellino, Campania - Italia</span>
+                        </div>
+                    </div>
+
+                    <h5 class="fw-bold mb-3">Seguimi</h5>
+                    <div class="d-flex">
+                        <a href="https://www.linkedin.com/in/carmine-federico-di-zenzo-b998a8210" target="_blank"
+                            class="social-link"><i class="fa-brands fa-linkedin-in"></i></a>
+                        <a href="https://github.com/dizenzoc" target="_blank" class="social-link"><i
+                                class="fa-brands fa-github"></i></a>
+                        <a href="https://www.instagram.com/federico_di_zenzo" target="_blank" class="social-link"><i
+                                class="fa-brands fa-instagram"></i></a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Form -->
+            <div class="col-lg-7">
+                <form id="contactForm" class="contact-card p-4">
+                    <div class="row g-3">
+                        <div class="col-12">
+                            <label for="nome" class="form-label text-muted small">Nome</label>
+                            <input type="text" class="form-control" id="nome" placeholder="Il tuo nome" required>
+                        </div>
+                        <div class="col-12">
+                            <label for="oggetto" class="form-label text-muted small">Oggetto</label>
+                            <input type="text" class="form-control" id="oggetto" placeholder="Oggetto del messaggio"
+                                required>
+                        </div>
+                        <div class="col-12">
+                            <label for="messaggio" class="form-label text-muted small">Messaggio</label>
+                            <textarea class="form-control" id="messaggio" rows="4" placeholder="Come posso aiutarti?"
+                                required></textarea>
+                        </div>
+                        <div class="col-12 mt-4">
+                            <button type="submit" class="btn btn-gradient w-100 py-3" onclick="sendEmail()"><i
+                                    class="fa-solid fa-paper-plane me-2"></i> Invia Messaggio</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</section>
